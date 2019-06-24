@@ -1,0 +1,261 @@
+/*******************************************************************************
+*                                   CONSOLE                                    *
+*******************************************************************************/
+
+console.log 
+-> show console
+
+clear
+
+console.warn
+-> warnning
+
+console.error
+-> explict the error
+
+/*******************************************************************************
+*                                 VARIABLES                                    *
+*******************************************************************************/
+//var, let, const
+
+var -> globally scoped -> don't use
+
+
+
+let -> reassign the value 
+ex)
+let age = 30;
+age = 31; 
+
+console.log(age);
+
+const -> cannot change the variables
+let score; -> error, should be intitalized at first to use const
+let score = 10;
+
+
+console.log(score);
+
+/*******************************************************************************
+*                                 DATA TYPES                                   *
+*******************************************************************************/
+String, Numbers, Boolean, null, undefined, Symbol
+
+const name = 'John';
+const age = 30;
+const rating = 4.5; // no technocal float and double in the javascript
+const isCool = true;
+const x = null;
+const y = undefined;
+let z;
+
+
+console.log(typeof name); // string
+console.log(typeof age); // number
+console.log(typeof rating); // number
+console.log(typeof isCool); // boolean
+console.log(typeof x); //object
+console.log(typeof y); //undefined
+console.log(typeof z); //undefined
+
+
+/////////////////////////////////String/////////////////////////////////////////
+//Concatenation
+console.log('My name is ' +name+ 'and I am ' + age)
+
+//Template String
+const hello = `My name is ${name} and I am ${age}`;
+console.log(hello);
+
+const s = 'hello world';
+
+//find out the length
+console.log(s.length); // 11
+
+//upper 
+console.log(s.toUpperCase()); // HELLO WORLD
+
+//lover
+console.log(s.toLowerCase()); // hello world
+
+//substring
+console.log(s.substr(0, 5).toUpperCase()); // HELLO
+
+//split
+console.log(s.split('')); //'' -> split by the letter
+                          //Array(11) ["h", "e", "l", "l", "o"...]
+
+const t = 'technology, it, computers';
+
+console.log(t.split(','));// ',' ->split by the comma
+                           //Array(5) ["technology", "it", "computers"]
+
+
+/*******************************************************************************
+*                                    ARRAYS                                    *
+*******************************************************************************/
+//Arrays - variables that hold multiple values
+
+//constructor
+const numbers = new Array(1, 2, 3, 4);
+console.log(numbers); // Array(4) [1, 2, 3, 4]
+
+const fruits = ['apples', 'oranges', 'pears', 10, true];
+//does not have to be same type in the array
+console.log(fruits); // Array(5) ["apples", "oranges", "pears", 10, true]
+
+console.log(fruits[1]); // oranges
+
+fruits[3] = 'grapes'; // can assign in the array altough it is const
+console.log(fruits[3]); // grapes
+
+//add at the end -> like the stack
+fruits.push('mangos');
+console.log(fruits[5]); // mangos
+
+//add at the front -> like the queue
+fruits.unshift('strawberries')
+console.log(fruits[0]);
+
+//elimiate the last -> like the stack
+console.log(fruits.pop()); // mangos
+
+//check if the element is in the array 
+console.log(Array.isArray(fruits)); // true
+console.log(Array.isArray('hello')); // false
+
+//get the index of element
+console.log(fruits.indexOf('oranges')); // 2
+
+
+
+
+
+/*******************************************************************************
+*                                  AGGREGATES                                  *
+*******************************************************************************/
+const person = {
+    firstName: 'John',
+    lastName: 'doe',
+    age: 30,
+    hobbies: ['music', 'movie'],
+    address: {
+        street: '50 main st',
+        city: 'Boston',
+        state: 'MA'
+    }
+}
+
+//alert(person); //object object
+console.log(person.firstName, person.lastName); // John doe
+console.log(person.hobbies[1]); // movies
+console.log(person.address.city); // boston
+
+const {firstName, lastName, address: {city}} = person;
+console.log(firstName); //john
+console.log(city); //boston
+
+person.email = 'john@gmail';
+
+const todos = [
+    {
+        id: 1,
+        text: 'Take out trash',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'Meeting with boss',
+        isCompleted: true
+    },
+    {
+        id: 3,
+        text: 'Dentist appointment',
+        isCompleted: false
+    },
+];
+
+console.log(todos);
+console.log(todos[1].text); //meeting with boss
+
+//convert JSON format -> send data to server
+const todoJSON = JSON.stringify(todos);
+
+console.log(todoJSON);
+
+
+
+/*******************************************************************************
+*                                     LOOPS                                    *
+*******************************************************************************/
+//FOR
+for(let i = 0; i < 10; i++) {
+    console.log(`for loop number: ${i}`);
+}
+
+//while
+let i = 0;
+while(i < 10) {
+    console.log(`while loop number: ${i}`);
+    i++;
+}
+
+const todos = [
+    {
+        id: 1,
+        text: 'Take out trash',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'Meeting with boss',
+        isCompleted: true
+    },
+    {
+        id: 3,
+        text: 'Dentist appointment',
+        isCompleted: false
+    },
+];
+
+//FOR array
+for(let i = 0; i < todos.length; i++) {
+    console.log(todos[i].text);
+}
+for(let todo of todos) {
+    console.log(todo.text);
+}
+
+// forEach, map, filter
+todos.forEach(function(todo) {
+    console.log(todo.text);
+});
+
+const todoText = todos.map(function(todo) {
+    return todo.text;    
+});//return array of todo.text and assign in the todoText
+
+console.log(todoText); // todos[i].text
+
+//filter the true values and assign array in the todoCompleted
+const todoCompleted = todos.filter(function(todo) {
+    return todo.isCompleted == true;
+});
+
+console.log(todoCompleted);
+
+const todoCompleted1 = todos.filter(function(todo) {
+    return todo.isCompleted == true;
+}).map(function(todo) {
+    return todo.text;
+});
+
+console.log(todoCompleted1);
+
+
+46' 00"
+/*******************************************************************************
+*                                 CONDTIONALS                                  *
+*******************************************************************************/
+
+
