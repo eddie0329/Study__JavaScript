@@ -257,5 +257,167 @@ console.log(todoCompleted1);
 /*******************************************************************************
 *                                 CONDTIONALS                                  *
 *******************************************************************************/
+const x = 10;
+const y = 20;
+if(x == 10) {
+    console.log(`x is ${x}`);
+}
+if(x > 10 || y > 10) {
+    console.log('x is more than 10 or y is more than 10');
+}
+if(x > 11 && y > 10) {
+    console.log('x is more than 11 and y is more than 10');
+}
+
+// === means match the type
+ if(x === '10') {
+     console.log(x);
+ }
+ else if(x > 10) {
+     console.log('x is greater then 10');
+ }
+ else {
+     console.log ('x is less then 10');
+ }
+
+
+/*******************************************************************************
+*                              TERNARY OPERATOR                                *
+*******************************************************************************/
+//Short hand condition
+const x = 11;
+
+//   '?' <- if       ':' <- else
+const color = x > 10 ? 'red' : 'blue';
+
+console.log(color);
+
+
+/////////SWITCH
+const x = 10;
+
+const color = x > 10 ? 'red' : 'blue';
+
+switch(color) {
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'blue':
+        console.log('color is blue');
+        break;
+    default:
+        console.log('color is not red or blue');
+}
+
+
+/*******************************************************************************
+*                                  FUNCTION                                    *
+*******************************************************************************/
+const addNums2 = (num1 = 1, num2 = 1) => {
+    return num1 + num2;
+}
+//// =
+//const addNums2 = (num1 = 1, num2 = 1) => num1 + num2;
+
+function addNums(num1 = 1, num2 = 1) {
+    return num1 + num2;
+}
+
+addNums(5, 4); // 9
+addNums(); // NANS or 2
+
+console.log(addNums(4, 5)); // 9
+console.log(addNums2()); // 2
+
+
+
+
+/*******************************************************************************
+*                          OBJECT ORIENTED PROGRAMMING                         *
+*******************************************************************************/
+
+//constructor function
+// function Person(firstName, lastName, dob) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.dob = new Date(dob);
+//     // this.getBrithYear = function() {
+//     //     return this.dob.getFullYear();
+//     // }
+//     // this.getFullName = function() {
+//     //     return `${this.firstName} ${this.lastName}`;
+//     // }
+// }
+
+// Person.prototype.getBrithYear = function() {
+//     return this.dob.getFullYear();
+// }
+// Person.prototype.getFullName = function() {
+//     return `${this.firstName} ${this.lastName}`;
+// }
+
+//Class
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+    getBrithYear = function() {
+        return this.dob.getFullYear();
+    }
+    getFullName = function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+
+
+// Instantiate object
+const person1 = new Person('John', 'doe', '4-3-1980');
+const person2 = new Person('Mary', 'Smith', '3-6-1970');
+
+
+console.log(person2.getBrithYear());
+console.log(person2.getFullName());
+
+
+
+/*******************************************************************************
+*                                      DOME                                    *
+*******************************************************************************/
+
+//Single element selector
+const form = document.getElementById('my-form');
+console.log(document.querySelector('h1'));
+
+
+//Multiple element selector
+console.log(document.querySelectorAll('.item'));
+console.log(document.getElementsByTagName('li'));
+
+const items = document.querySelectorAll('.item');
+
+items.forEach((item) =>console.log(item));
+
+const ul = document.querySelector('.items');
+
+// ul.remove();
+// ul.lastElementChild.remove();
+// ul.firstElementChild.textContent = 'Hello';
+// ul.children[1].innerText = 'brad';
+ul.lastElementChild.innerHTML = '<h1>HELLO</H1>'
+
+const btn = document.querySelector('.btn');
+btn.style.background = 'red';
+
+btn.addEventListener('click', (e) => {
+    //stoped flashing
+    e.preventDefault();
+    document.querySelector('#my-form').style.background = '#ccc';
+    document.querySelector('body').classList.add('bg-dark');
+    document.querySelector('.items').lastElementChild.innerHTML = '<h1>hello</h1>'
+    
+});
 
 

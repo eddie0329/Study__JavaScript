@@ -1,56 +1,29 @@
-const todos = [
-    {
-        id: 1,
-        text: 'Take out trash',
-        isCompleted: true
-    },
-    {
-        id: 2,
-        text: 'Meeting with boss',
-        isCompleted: true
-    },
-    {
-        id: 3,
-        text: 'Dentist appointment',
-        isCompleted: false
-    },
-];
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+// const msg = document.querySelector('#.msg');
+const userList = document.querySelector('#users');
 
-//FOR array
-for(let i = 0; i < todos.length; i++) {
-    console.log(todos[i].text);
+myForm.addEventListener('submit', onsubmit);
+
+function onsubmit(e) {
+    e.preventDefault();
+
+    if(nameInput.value === '' || emailInput.value === '') {
+        alert('please enter fields');
+    } else {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(
+            `${nameInput.value} : ${emailInput.value}`));
+        
+        userList.appendChild(li);
+
+        //clear field
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+
+    console.log(nameInput.value);
 }
-for(let todo of todos) {
-    console.log(todo.text);
-}
-
-// forEach, map, filter
-todos.forEach(function(todo) {
-    console.log(todo.text);
-});
-
-const todoText = todos.map(function(todo) {
-    return todo.text;    
-});//return array of todo.text and assign in the todoText
-
-console.log(todoText); // todos[i].text
-
-//filter the true values and assign array in the todoCompleted
-const todoCompleted = todos.filter(function(todo) {
-    return todo.isCompleted == true;
-});
-
-console.log(todoCompleted);
-
-const todoCompleted1 = todos.filter(function(todo) {
-    return todo.isCompleted == true;
-}).map(function(todo) {
-    return todo.text;
-});
-
-console.log(todoCompleted1);
-
-
-
 
 
