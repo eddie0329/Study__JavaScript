@@ -1,6 +1,6 @@
 var hero = {
-  _name = 'eddie',
-  getSecurity: function () {
+  _name: "eddie",
+  getSecurity: function() {
     return this._name;
   }
 };
@@ -8,4 +8,4 @@ var hero = {
 var stole = hero.getSecurity;
 
 console.log(hero.getSecurity());
-console.log(stole.getSecurity());
+console.log(stole());
