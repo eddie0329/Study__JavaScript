@@ -1,15 +1,23 @@
-function foo1() {
-  return {
-    bar: "hello"
-  };
-}
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
 
-function foo2() {
-  return;
-  {
-    bar: "hello";
+  setName(name) {
+    this.name = name;
   }
 }
 
-console.log(foo1());
-console.log(foo2());
+const p1 = new Person("Mary");
+console.log(p1.getName());
+
+p1.setName("Eddie");
+
+console.log(p1.getName());
+
+console.log(p1.name);
+p1.name = "Paule";
+console.log(p1.name);

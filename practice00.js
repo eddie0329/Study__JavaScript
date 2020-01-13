@@ -1,7 +1,3 @@
-const MY_OBJECT = { key: "value" };
+const arr1 = [1, 2, 3];
 
-console.log(MY_OBJECT.key);
-
-MY_OBJECT.key = "others ";
-
-console.log(MY_OBJECT.key);
+arr1.filter();

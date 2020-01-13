@@ -1,10 +1,9 @@
-(function() {
-  console.log(1);
-  setTimeout(() => {
-    console.log(2);
-  }, 1000);
-  setTimeout(() => {
-    console.log(3);
-  }, 0);
-  console.log(4);
-})();
+function Person(input) {
+  Person.prototype.eyes = input;
+}
+
+let kim = new Person(3);
+let choi = new Person(1);
+
+console.log(kim.eyes);
+console.log(choi.eyes);
