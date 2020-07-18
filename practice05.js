@@ -1,10 +1,10 @@
-let Person = function() {
+let Person = function () {
   this.canTalk = true;
 };
 
-Person.prototype.greet = function() {
+Person.prototype.greet = function () {
   if (this.canTalk) {
-    console.log("hi");
+    console.log('hi');
   }
 };
 
