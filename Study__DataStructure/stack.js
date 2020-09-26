@@ -32,9 +32,7 @@ class Stack {
 }
 
 const myStack = new Stack();
-myStack.push(1);
-myStack.push(2);
-myStack.push(3);
+myStack.push(1).push(2).push(3);
 console.log(myStack.top()); // 3
 myStack.circuit(); // 1 2 3
 console.log(myStack.isEmpty()); // false
