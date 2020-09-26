@@ -9,7 +9,7 @@
  * solution('abcd') -> 'd'
  * -> 해석: 'd'의 인덱스가 3이라서 'd'만 출력!
  *
- * 예제2:
+ * 예제2
  * solution('abcdefghijkwmdkddd') -> 'dgjdd'
  */
 
@@ -19,4 +19,4 @@
  */
 const solution = (str) => {};
 
-solution("ujJHdDaddveeneNPAajSasswWQsmzeetDreamBabjmse");
+solution('ujJHdDaddveeneNPAajSasswWQsmzeetDreamBabjmse');

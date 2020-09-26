@@ -1,20 +1,18 @@
-function a(input) {
-  let ID = input;
+function a(ID) {
+  let _ID = ID;
   return {
     getID: function() {
-      console.log(ID);
-      return ID;
+      console.log(_ID);
+      return _ID;
     },
     setID: function(newID) {
-      ID = newID;
+      _ID = newID;
     }
   };
 }
 
-const myID = a(1234);
-myID.getID();
-myID.setID(9999999);
-myID.getID();
-const result = (a(1234).ID = 9999);
+const p1 = new a(1234);
 
-result.getID();
+p1.getID();
+p1.setID(492932);
+p1.getID();
