@@ -27,4 +27,4 @@ function example2() {
   console.log(Array.prototype.join.call(arguments));
 }
 
-example2('eddie', 2, true); // [Arguments] { '0': 'eddie', '1': 2, '2': true }
+example2('eddie', 2, true); // eddie,2,true
